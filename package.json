@@ -1,6 +1,6 @@
 {
   "name": "mimosa-path-fix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/anachron/mimosa-path-fix",
   "author": "Anachron",
   "description": "A Mimosa module that handles fixing of asset paths.",

@@ -48,18 +48,6 @@ var _fixRegExp = function( string ) {
 };
 
 var registration = function( mimosaConfig, register ) {
-
-  // Overwrite all variables in path with their correct paths
-  for ( var file in mimosaConfig.pathFix.files ) {
-    var value = mimosaConfig.pathFix.files[file];
-    delete mimosaConfig.pathFix.files[file];
-    mimosaConfig.pathFix.files[ path.normalize(file
-      .replace( '$sourceDir$', mimosaConfig.watch.sourceDir )
-      .replace( '$cssVendor$', mimosaConfig.vendor.stylesheets )
-      .replace( '$jsVendor$', mimosaConfig.vendor.javascripts )
-    ) ] = value;
-  }
-
   // If enabled, register into workflow
   if ( mimosaConfig.pathFix.enabled ) {
     register( ['add', 'update', 'buildExtension', 'buildFile'], 'beforeWrite', _fixPaths, mimosaConfig.pathFix.extensions );
